@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { HangmanDrawing, HangmanWord, Keyboard } from "./Components";
+import words from "./wordList.json";
 
 function App() {
+  const [wordToGuess, setWordToGuess] = useState(() => {
+    return words[Math.floor(Math.random() * words.length)];
+  });
+
+  const [guessLetters, setguessLetters] = useState<string[]>([]);
+  const incorrectLetters = guessLetters.filter(letter => !wordToGuess.includes(letter))
+
+  // console.log(wordToGuess);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        maxWidth: "800px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "2rem",
+        margin: "0 auto",
+      }}
+    >
+      <div style={{ fontSize: "2rem", textAlign: "center" }}>Lose/Win</div>
+      <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
+      <HangmanWord />
+      <div style={{ alignSelf: "stretch" }}>
+        <Keyboard />
+      </div>
     </div>
   );
 }

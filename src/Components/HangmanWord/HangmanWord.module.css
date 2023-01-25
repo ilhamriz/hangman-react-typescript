@@ -1,0 +1,8 @@
+.wrapper {
+  display: flex;
+  gap: .25em;
+  font-size: 6rem;
+  font-weight: bold;
+  font-family: monospace;
+  text-transform: uppercase;
+}
