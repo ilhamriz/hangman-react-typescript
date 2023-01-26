@@ -1,36 +1,24 @@
-import styles from './HangmanDrawing.module.css';
+import styles from "./HangmanDrawing.module.css";
 
-const HEAD = (
-  <div className='HEAD' />
-)
+const HEAD = <div className={styles.HEAD} />;
 
-const BODY = (
-  <div className='BODY' />
-)
+const BODY = <div className={styles.BODY} />;
 
-const ARM_RIGHT = (
-  <div className='ARM_RIGHT' />
-)
+const ARM_RIGHT = <div className={styles.ARM_RIGHT} />;
 
-const ARM_LEFT = (
-  <div className='ARM_LEFT' />
-)
+const ARM_LEFT = <div className={styles.ARM_LEFT} />;
 
-const LEG_RIGHT = (
-  <div className='LEG_RIGHT' />
-)
+const LEG_RIGHT = <div className={styles.LEG_RIGHT} />;
 
-const LEG_LEFT = (
-  <div className='LEG_LEFT' />
-)
+const LEG_LEFT = <div className={styles.LEG_LEFT} />;
 
 const BODY_PARTS = [HEAD, BODY, ARM_RIGHT, ARM_LEFT, LEG_RIGHT, LEG_LEFT];
 
 type Props = {
-  numberOfGuesses: number
-}
+  numberOfGuesses: number;
+};
 
-const HangmanDrawing = ({numberOfGuesses}: Props) => {
+const HangmanDrawing = ({ numberOfGuesses }: Props) => {
   return (
     <div className={styles.wrapper}>
       {BODY_PARTS.slice(0, numberOfGuesses)}
@@ -39,7 +27,7 @@ const HangmanDrawing = ({numberOfGuesses}: Props) => {
       <div className={styles.pole} />
       <div className={styles.bottom} />
     </div>
-  )
-}
+  );
+};
 
-export default HangmanDrawing
+export default HangmanDrawing;
