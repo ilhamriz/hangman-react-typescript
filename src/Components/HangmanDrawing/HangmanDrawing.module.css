@@ -1,8 +1,8 @@
-.drawing_wrapper {
+.wrapper {
   position: relative;
 }
 
-.drawing_wrapper * {
+.wrapper * {
   background-color: black;
 }
 

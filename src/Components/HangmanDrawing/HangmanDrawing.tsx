@@ -1,4 +1,4 @@
-import './HangmanDrawing.css';
+import styles from './HangmanDrawing.module.css';
 
 const HEAD = (
   <div className='HEAD' />
@@ -32,12 +32,12 @@ type Props = {
 
 const HangmanDrawing = ({numberOfGuesses}: Props) => {
   return (
-    <div className='drawing_wrapper'>
+    <div className={styles.wrapper}>
       {BODY_PARTS.slice(0, numberOfGuesses)}
-      <div className='hang' />
-      <div className='top' />
-      <div className='pole' />
-      <div className='bottom' />
+      <div className={styles.hang} />
+      <div className={styles.top} />
+      <div className={styles.pole} />
+      <div className={styles.bottom} />
     </div>
   )
 }
